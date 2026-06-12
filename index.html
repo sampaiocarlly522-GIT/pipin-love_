@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bom dia meu amor PIPINNNNNN ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffe6ee,#ffd6e7,#fff0f5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    position:relative;
+}
+
+.container{
+    text-align:center;
+    z-index:2;
+    padding:20px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    color:#c2185b;
+    text-shadow:2px 2px 10px rgba(255,255,255,.8);
+    margin-bottom:40px;
+}
+
+.heart{
+    width:220px;
+    height:220px;
+    position:relative;
+    margin:auto;
+    transform:rotate(-45deg);
+    cursor:pointer;
+    animation:pulse 1.8s infinite;
+    background:linear-gradient(45deg,#ff1744,#ff5e78);
+    box-shadow:0 0 40px rgba(255,23,68,.4);
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    width:220px;
+    height:220px;
+    position:absolute;
+    border-radius:50%;
+    background:linear-gradient(45deg,#ff1744,#ff5e78);
+}
+
+.heart::before{
+    top:-110px;
+    left:0;
+}
+
+.heart::after{
+    left:110px;
+    top:0;
+}
+
+.heart-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    color:white;
+    font-weight:bold;
+    font-size:1.2rem;
+    z-index:3;
+}
+
+.dates{
+    margin-top:50px;
+    font-size:2rem;
+    color:#b0004d;
+    font-weight:700;
+    text-shadow:1px 1px 4px white;
+}
+
+.message-box{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:700px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(0,0,0,.2);
+    z-index:999;
+}
+
+.message-box h2{
+    color:#d81b60;
+    margin-bottom:20px;
+}
+
+.message-box p{
+    color:#444;
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+.close{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:#d81b60;
+    color:white;
+    cursor:pointer;
+}
+
+.heart-floating{
+    position:absolute;
+    color:#ff80ab;
+    animation:float linear infinite;
+    opacity:.5;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:rotate(-45deg) scale(1);
+    }
+    50%{
+        transform:rotate(-45deg) scale(1.08);
+    }
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:.7;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:2.7rem;
+    }
+
+    .heart{
+        width:160px;
+        height:160px;
+    }
+
+    .heart::before,
+    .heart::after{
+        width:160px;
+        height:160px;
+    }
+
+    .heart::before{
+        top:-80px;
+    }
+
+    .heart::after{
+        left:80px;
+    }
+
+    .dates{
+        font-size:1.4rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bom dia meu amor PIPINNNNNN ❤️❤️</h1>
+
+    <div class="heart" onclick="showMessage()">
+        <div class="heart-text">Clique ❤️</div>
+    </div>
+
+    <div class="dates">
+        30/03/2021 - 12/06/2026
+    </div>
+
+</div>
+
+<div class="message-box" id="messageBox">
+    <h2>Feliz Dia dos Namorados ❤️</h2>
+
+    <p>
+        Feliz nosso dia, meu amor.<br><br>
+
+        Feliz 5 anos de muito amor e companheirismo, que nossa união possa se concretizar através dos anos e que fortaleça mais ainda meu amor.
+
+        <br><br>
+
+        Saiba que amo muito você, sempre estarei e lutarei pela gente.
+
+        <br><br>
+
+        Para a melhor namorada do mundo, minha princesa, minha vida, meu mundo,
+        <strong>MARIA EDUARDA</strong>.
+
+        <br><br>
+
+        Do seu PIPIN,
+        <strong>CÁRLLY SAMPAIO ❤️</strong>
+    </p>
+
+    <button class="close" onclick="closeMessage()">Fechar</button>
+</div>
+
+<script>
+
+function showMessage(){
+    document.getElementById("messageBox").style.display="block";
+}
+
+function closeMessage(){
+    document.getElementById("messageBox").style.display="none";
+}
+
+for(let i=0;i<35;i++){
+
+    let heart=document.createElement("div");
+
+    heart.classList.add("heart-floating");
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*25+15)+"px";
+    heart.style.animationDuration=(Math.random()*10+8)+"s";
+    heart.style.animationDelay=Math.random()*5+"s";
+
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
